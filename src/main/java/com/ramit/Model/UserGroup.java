@@ -19,7 +19,7 @@ public class UserGroup {
 	private Integer UserGroupid;
 	private String userGroupname;
 	private String description;
-	@ManyToMany(cascade = {CascadeType.PERSIST,CascadeType.MERGE} ,fetch = FetchType.LAZY )
+	@ManyToMany(cascade = {CascadeType.MERGE} ,fetch = FetchType.LAZY )
 	List<Rule>roles;
 
 }

@@ -24,7 +24,7 @@ public class User {
 	 String pwd;
 	 String cpwd;
 	 String description;
-	@ManyToMany(cascade = {CascadeType.ALL} ,fetch = FetchType.LAZY)
+	@ManyToMany(cascade = {CascadeType.MERGE,CascadeType.REFRESH,CascadeType.REMOVE} ,fetch = FetchType.LAZY)
     List<UserGroup> userGroup;
 
 }

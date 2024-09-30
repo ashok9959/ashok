@@ -13,7 +13,7 @@ public class UserGroupService {
 	@Autowired
 	UserGroupRepository userGroupRepo;
 	public List<UserGroup> getUserGroupforUserId(Integer id) {
-		return null ;//userGroupRepo.findByUser_UserId(id);
+		return userGroupRepo.findByUser_UserId(id);
 		
 	}
 	public List<UserGroup> getUserGroup() {

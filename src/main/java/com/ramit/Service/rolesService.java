@@ -17,23 +17,25 @@ public class rolesService {
 	RuleRepository ruleRepo;
 	@Autowired
 	WorkflowRepository workflowRepo;
+	
 	public List<Rule> getAllRoles() {
 		return ruleRepo.findAll();
+	}	
+	
+	public boolean addRole(Rule role) {
+		return  ruleRepo.save(role)!=null;
 	}
-
 	public List<Workflow> getWorkFlowforRoleId(Integer id) {
 		return workflowRepo.findByRoles_RoleId(id);
 		
 	}
 	
-	public boolean addRole(Rule role) {
-		return  ruleRepo.save(role)!=null;
-	}
-
 	public List<Workflow> getWorkFlow() {
 		return workflowRepo.findAll();
 
 	}
+
+	
 	
 	
 

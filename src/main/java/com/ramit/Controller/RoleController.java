@@ -24,8 +24,17 @@ public class RoleController {
 	public List<Rule> getALLRoles() {
 
 		return roleService.getAllRoles();
-	}
+	}	
+	
+	@PostMapping("/addRole")
+	public boolean addRole(@RequestBody Rule role) {
+		return roleService.addRole(role);
+	}	
 
+	@PutMapping("/addRole")
+	public boolean updateRole(@RequestBody Rule role) {
+		return roleService.addRole(role);
+	}
 	@GetMapping("/workflow/{id}") 
 	public List<Workflow> getWorkFlowforroleId(@PathVariable Integer id){
 	return roleService.getWorkFlowforRoleId(id);
@@ -34,17 +43,6 @@ public class RoleController {
 	@GetMapping("/workflow") 
 	public List<Workflow> getWorkFlowf(){
 	return roleService.getWorkFlow();
-	}
-	
-	@PostMapping("/addRole")
-	public boolean addRole(@RequestBody Rule role) {
-		return roleService.addRole(role);
-	}
-	
-
-	@PutMapping("/addRole")
-	public boolean updateRole(@RequestBody Rule role) {
-		return roleService.addRole(role);
 	}
 
 

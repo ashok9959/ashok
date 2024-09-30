@@ -38,5 +38,4 @@ public class UsergroupController {
 		return userGroupService.addUserGroup(userGroup);
 	}
 
-
 }

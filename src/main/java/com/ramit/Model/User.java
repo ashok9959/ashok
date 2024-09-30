@@ -8,21 +8,23 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import lombok.Data;
 
-
+@Entity
+@Data
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer userId;
-	private String FirstName;
-	private String MiddleName;
-	private String LastName;
-	private String pwd;
-	private String cpwd;
-	private String description;
-	//@OneToMany(cascade = {CascadeType.PERSIST,CascadeType.MERGE} ,fetch = FetchType.LAZY)
-   // List<UserGroup> userGroup;
+	 Integer userId;
+	 String fName;
+	 String mName;
+	 String lName;
+	 String pwd;
+	 String cpwd;
+	 String description;
+	@ManyToMany(cascade = {CascadeType.ALL} ,fetch = FetchType.LAZY)
+    List<UserGroup> userGroup;
 
 }
